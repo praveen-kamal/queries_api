@@ -23,7 +23,7 @@ const loginAdmin = async (req, res) => {
             withCredentials: true,
             sameSite: "None",
             secure: true,
-            maxAge: 2 * 60 * 1000, // 1 hour
+            maxAge: 60 * 60 * 1000, // 1 hour
         });
 
         res.status(200).json({
