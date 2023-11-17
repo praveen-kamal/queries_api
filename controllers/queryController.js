@@ -26,10 +26,11 @@ const postQuery = async (req, res) => {
             message: req.body.message,
         });
         await newQuery.save();
-        res.status(200).json({ message: "Query posted" });
+        res.status(200).json({ message: "Query posted", success: true });
     } catch (err) {
         res.status(401).json({
             message: "Error posting query",
+            success: false,
             error: `Error: ${err.message}`,
         });
     }
@@ -41,10 +42,11 @@ const postQuery = async (req, res) => {
 const deleteQuery = async (req, res) => {
     try {
         const query = await Query.findByIdAndDelete(req.params.id);
-        res.status(200).json({ message: "Query deleted" });
+        res.status(200).json({ message: "Query deleted", success: true });
     } catch (err) {
         res.status(401).json({
             message: "Error deleting query",
+            success: false,
             error: `Error: ${err.message}`,
         });
     }

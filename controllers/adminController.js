@@ -3,6 +3,9 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import generateToken from "../utils/generateToken.js";
 
+// @desc Authenticate admin
+// @route POST /api/admin/login
+// @access Public
 const loginAdmin = async (req, res) => {
     try {
         const { username, password } = req.body;
