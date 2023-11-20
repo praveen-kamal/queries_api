@@ -14,6 +14,7 @@ const app = express();
 app.use(cors(
     {
         methods: ["GET", "POST", "PUT", "DELETE"],
+        credentials: false,
     },
 ));
 app.use(express.json());
